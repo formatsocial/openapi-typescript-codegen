@@ -9995,9 +9995,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class CollectionFormatService {
 
@@ -10042,9 +10042,9 @@ import type { ModelWithDictionary } from '../models/ModelWithDictionary';
 import type { ModelWithEnum } from '../models/ModelWithEnum';
 import type { ModelWithString } from '../models/ModelWithString';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class ComplexService {
 
@@ -10119,9 +10119,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class DefaultService {
 
@@ -10145,9 +10145,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 /* eslint-disable */
 import type { ModelWithString } from '../models/ModelWithString';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class DefaultsService {
 
@@ -10258,9 +10258,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 /* eslint-disable */
 import type { DeprecatedModel } from '../models/DeprecatedModel';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class DeprecatedService {
 
@@ -10289,9 +10289,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class DescriptionsService {
 
@@ -10337,9 +10337,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class DuplicateService {
 
@@ -10391,9 +10391,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class ErrorService {
 
@@ -10430,9 +10430,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 /* eslint-disable */
 import type { ModelWithString } from '../models/ModelWithString';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class FormDataService {
 
@@ -10464,9 +10464,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class HeaderService {
 
@@ -10496,9 +10496,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 /* eslint-disable */
 import type { ModelWithString } from '../models/ModelWithString';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class MultipartService {
 
@@ -10545,9 +10545,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class MultipleTags1Service {
 
@@ -10581,9 +10581,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class MultipleTags2Service {
 
@@ -10617,9 +10617,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class MultipleTags3Service {
 
@@ -10642,9 +10642,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class NoContentService {
 
@@ -10670,9 +10670,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 import type { ModelWithString } from '../models/ModelWithString';
 import type { Pageable } from '../models/Pageable';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class ParametersService {
 
@@ -10815,9 +10815,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 /* eslint-disable */
 import type { ModelWithString } from '../models/ModelWithString';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class RequestBodyService {
 
@@ -10853,9 +10853,9 @@ import type { ModelThatExtends } from '../models/ModelThatExtends';
 import type { ModelThatExtendsExtends } from '../models/ModelThatExtendsExtends';
 import type { ModelWithString } from '../models/ModelWithString';
 
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class ResponseService {
 
@@ -10917,9 +10917,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class SimpleService {
 
@@ -11001,9 +11001,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class TypesService {
 
@@ -11058,9 +11058,9 @@ exports[`v3WithCustomCoreLocation should generate: ./test/generated/v3WithCustom
 "/* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CancelablePromise } from '../../../../test/generated/bin/core/CancelablePromise';
-import { OpenAPI } from '../../../../test/generated/bin/core/OpenAPI';
-import { request as __request } from '../../../../test/generated/bin/core/request';
+import type { CancelablePromise } from '../../bin/core/CancelablePromise';
+import { OpenAPI } from '../../bin/core/OpenAPI';
+import { request as __request } from '../../bin/core/request';
 
 export class UploadService {
 
