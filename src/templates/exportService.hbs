@@ -41,8 +41,21 @@ import { request as __request } from '{{{coreLocationUpALevel}}}/request';
 {{/equals}}
 export class {{{name}}}{{{@root.postfix}}} {
 	{{#if @root.exportClient}}
+	{{#if @root.exportReactQueryHook}}
+
+	constructor(public readonly httpRequest: BaseHttpRequest) {
+	{{#each operations}}
+	
+		this.{{{name}}} = this.{{{name}}}.bind(this)
+	{{#equals method 'GET'}}
+		this.use{{capitalise name}} = this.use{{capitalise name}}.bind(this)
+	{{/equals}}
+	{{/each}}
+	}
+	{{else}}
 
 	constructor(public readonly httpRequest: BaseHttpRequest) {}
+	{{/if}}
 	{{else}}
 	{{#equals @root.httpClient 'angular'}}
 
