@@ -1,5 +1,8 @@
 {{>header}}
 
+{{#if @root.exportReactQueryHook}}
+import { useQuery } from "@tanstack/react-query";
+{{/if}}
 {{#equals @root.httpClient 'angular'}}
 {{#if @root.exportClient}}
 import { Injectable } from '@angular/core';
@@ -148,5 +151,52 @@ export class {{{name}}}{{{@root.postfix}}} {
 		});
 	}
 
+	{{#if @root.exportReactQueryHook}}
+
+	/**
+	 * Hook version using react-query
+	{{#if deprecated}}
+	 * @deprecated
+	{{/if}}
+	{{#if summary}}
+	 * {{{escapeComment summary}}}
+	{{/if}}
+	{{#if description}}
+	 * {{{escapeComment description}}}
+	{{/if}}
+	{{#unless @root.useOptions}}
+	{{#if parameters}}
+	{{#each parameters}}
+	 * @param {{{name}}} {{#if description}}{{{escapeComment description}}}{{/if}}
+	{{/each}}
+	{{/if}}
+	{{/unless}}
+	{{#each results}}
+	 * @returns {{{type}}} {{#if description}}{{{escapeComment description}}}{{/if}}
+	{{/each}}
+	 * @throws ApiError
+	 */
+	{{#if @root.exportClient}}
+	public {{camelCase @root.reactQueryHookName}}({{>parameters}}){
+	{{else}}
+	public static use{{capitalise name}}Data({{>parameters}}){
+	{{/if}}
+		return useQuery({
+			queryKey: [
+			'{{@root.name}}',
+			{{#each parametersPath}}
+			{{{name}}},
+			{{/each}}
+			],
+			queryFn: async () => {
+			return await this.{{{name}}}(
+			{{#each parameters}}
+			{{{name}}},
+			{{/each}}
+			);
+			},
+		});
+	}
+	{{/if}}
 	{{/each}}
 }

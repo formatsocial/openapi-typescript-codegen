@@ -32,6 +32,7 @@ import { writeClientServices } from './writeClientServices';
  * @param postfixModels Model name postfix
  * @param coreLocationSameLevel The location of the core packages
  * @param coreLocationUpALevel The location of the core packages
+ * @param exportReactQueryHook export react hooks
  * @param clientName Custom client class name
  * @param request Path to custom request file
  */
@@ -51,6 +52,7 @@ export const writeClient = async (
     postfixModels: string,
     coreLocationSameLevel: string,
     coreLocationUpALevel: string,
+    exportReactQueryHook: boolean,
     clientName?: string,
     request?: string
 ): Promise<void> => {
@@ -84,6 +86,7 @@ export const writeClient = async (
             postfixServices,
             coreLocationSameLevel,
             coreLocationUpALevel,
+            exportReactQueryHook,
             clientName
         );
     }

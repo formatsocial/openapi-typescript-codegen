@@ -104,4 +104,8 @@ export const registerHandlebarHelpers = (root: {
     Handlebars.registerHelper('camelCase', function (value: string): string {
         return camelCase(value);
     });
+
+    Handlebars.registerHelper('capitalise', function (value: string): string {
+        return value.charAt(0).toUpperCase() + value.substring(1);
+    });
 };

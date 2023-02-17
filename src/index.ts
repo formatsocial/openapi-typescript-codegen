@@ -28,6 +28,7 @@ export type Options = {
     exportServices?: boolean;
     exportModels?: boolean;
     exportSchemas?: boolean;
+    exportReactQueryHook?: boolean;
     indent?: Indent;
     postfixServices?: string;
     postfixModels?: string;
@@ -50,6 +51,7 @@ export type Options = {
  * @param exportServices Generate services
  * @param exportModels Generate models
  * @param exportSchemas Generate schemas
+ * @param exportReactQueryHook Generate schemas
  * @param indent Indentation options (4, 2 or tab)
  * @param postfixServices Service name postfix
  * @param postfixModels Model name postfix
@@ -74,6 +76,7 @@ export const generate = async ({
     request,
     write = true,
     coreLocation = undefined,
+    exportReactQueryHook = false,
 }: Options): Promise<void> => {
     const openApi = isString(input) ? await getOpenApiSpec(input) : input;
     const openApiVersion = getOpenApiVersion(openApi);
@@ -115,6 +118,7 @@ export const generate = async ({
                 postfixModels,
                 coreLocationSameLevel,
                 coreLocationUpALevel,
+                exportReactQueryHook,
                 clientName,
                 request
             );
@@ -141,6 +145,7 @@ export const generate = async ({
                 postfixModels,
                 coreLocationSameLevel,
                 coreLocationUpALevel,
+                exportReactQueryHook,
                 clientName,
                 request
             );

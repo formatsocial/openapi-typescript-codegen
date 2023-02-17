@@ -34,6 +34,7 @@ export const writeClientServices = async (
     postfix: string,
     coreLocationSameLevel: string,
     coreLocationUpALevel: string,
+    exportReactQueryHook: boolean,
     clientName?: string
 ): Promise<void> => {
     for (const service of services) {
@@ -47,6 +48,7 @@ export const writeClientServices = async (
             exportClient: isDefined(clientName),
             coreLocationSameLevel,
             coreLocationUpALevel,
+            exportReactQueryHook,
         });
         await writeFile(file, i(f(templateResult), indent));
     }

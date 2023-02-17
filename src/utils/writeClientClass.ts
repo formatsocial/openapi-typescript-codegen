@@ -47,6 +47,9 @@ export const writeClientClass = async (
         httpRequest: getHttpRequestName(httpClient),
         coreLocationSameLevel,
         coreLocationUpALevel,
+        exportReactQueryHook: true,
+        reactQueryKeys: 'pathssss',
+        reactQueryHookName: `use--SOOOMMMEEETTTJJHJIOIUJDFData`,
     });
 
     await writeFile(resolve(outputPath, `${clientName}.ts`), i(f(templateResult), indent));
