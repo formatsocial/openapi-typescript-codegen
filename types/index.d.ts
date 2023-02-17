@@ -29,6 +29,7 @@ export type Options = {
     request?: string;
     write?: boolean;
     coreLocation?: string;
+    exportReactQueryHook?: boolean;
 };
 
 export interface OpenApi {}
