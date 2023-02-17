@@ -178,9 +178,9 @@ export class {{{name}}}{{{@root.postfix}}} {
 	 * @throws ApiError
 	 */
 	{{#if @root.exportClient}}
-	public use{{capitalise name}}Data({{>parameters}}){
+	public use{{capitalise name}}({{>parameters}}){
 	{{else}}
-	public static use{{capitalise name}}Data({{>parameters}}){
+	public static use{{capitalise name}}({{>parameters}}){
 	{{/if}}
 		return useQuery({
 			queryKey: [
@@ -203,9 +203,9 @@ export class {{{name}}}{{{@root.postfix}}} {
 	}
 	
 	{{#if @root.exportClient}}
-	public use{{capitalise name}}DataQueryKey({{>parameters}}){
+	public use{{capitalise name}}QueryKey({{>parameters}}){
 	{{else}}
-	public static use{{capitalise name}}DataQueryKey({{>parameters}}){
+	public static use{{capitalise name}}QueryKey({{>parameters}}){
 	{{/if}}
 		return  [
 			'{{@root.name}}',
