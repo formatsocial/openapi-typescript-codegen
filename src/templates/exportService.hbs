@@ -177,7 +177,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	 * @throws ApiError
 	 */
 	{{#if @root.exportClient}}
-	public {{camelCase @root.reactQueryHookName}}({{>parameters}}){
+	public use{{capitalise name}}Data({{>parameters}}){
 	{{else}}
 	public static use{{capitalise name}}Data({{>parameters}}){
 	{{/if}}
