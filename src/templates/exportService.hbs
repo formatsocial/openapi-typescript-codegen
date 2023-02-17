@@ -152,6 +152,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	}
 
 	{{#if @root.exportReactQueryHook}}
+	{{#equals method 'GET'}}
 
 	/**
 	 * Hook version using react-query
@@ -210,7 +211,8 @@ export class {{{name}}}{{{@root.postfix}}} {
 			{{/each}}
 			]
 	}
-	
+
+	{{/equals}}
 	{{/if}}
 	{{/each}}
 }
