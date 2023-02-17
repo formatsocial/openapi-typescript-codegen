@@ -1,7 +1,7 @@
 {{>header}}
 
 {{#if @root.exportReactQueryHook}}
-import { useQuery } from "@tanstack/react-query";
+import { defaultContext, useQuery } from "@tanstack/react-query";
 {{/if}}
 {{#equals @root.httpClient 'angular'}}
 {{#if @root.exportClient}}
@@ -183,6 +183,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	public static use{{capitalise name}}({{>parameters}}){
 	{{/if}}
 		return useQuery({
+			context: defaultContext,
 			queryKey: [
 			'{{@root.name}}',
 			{{#each parametersPath}}
