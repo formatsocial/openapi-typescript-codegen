@@ -83,6 +83,7 @@ import partialTypeInterface from '../templates/partials/typeInterface.hbs';
 import partialTypeIntersection from '../templates/partials/typeIntersection.hbs';
 import partialTypeReference from '../templates/partials/typeReference.hbs';
 import partialTypeUnion from '../templates/partials/typeUnion.hbs';
+import exportReactQueryHookKey from '../templates/partials/exportReactQueryHookKey.hbs';
 import { registerHandlebarHelpers } from './registerHandlebarHelpers';
 
 export interface Templates {
@@ -163,6 +164,7 @@ export const registerHandlebarTemplates = (root: {
     Handlebars.registerPartial('typeInterface', Handlebars.template(partialTypeInterface));
     Handlebars.registerPartial('typeReference', Handlebars.template(partialTypeReference));
     Handlebars.registerPartial('typeUnion', Handlebars.template(partialTypeUnion));
+    Handlebars.registerPartial('exportReactQueryHookKey', Handlebars.template(exportReactQueryHookKey));
     Handlebars.registerPartial('typeIntersection', Handlebars.template(partialTypeIntersection));
     Handlebars.registerPartial('base', Handlebars.template(partialBase));
 
