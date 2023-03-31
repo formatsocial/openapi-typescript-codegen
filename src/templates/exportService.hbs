@@ -213,7 +213,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	{{#if @root.exportClient}}
 	public use{{capitalise name}}QueryKey({{>parameters}}){
 	{{else}}
-	public static use{{capitalise name}}QueryKey({{>parameters}}){
+	public static use{{capitalise name}}QueryKey({{>parameters}}):string[]{
 	{{/if}}
 		return  [
 			{{>exportReactQueryHookKey}}
