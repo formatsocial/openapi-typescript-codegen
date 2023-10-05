@@ -1,6 +1,8 @@
+"use client"
 {{>header}}
 
 {{#if @root.exportReactQueryHook}}
+import { defaultContext, useQuery } from "@tanstack/react-query";
 {{/if}}
 {{#equals @root.httpClient 'angular'}}
 {{#if @root.exportClient}}
@@ -46,6 +48,9 @@ export class {{{name}}}{{{@root.postfix}}} {
 	{{#each operations}}
 	
 		this.{{{name}}} = this.{{{name}}}.bind(this)
+	{{#equals method 'GET'}}
+		this.use{{capitalise name}} = this.use{{capitalise name}}.bind(this)
+	{{/equals}}
 	{{/each}}
 	}
 	{{else}}
@@ -159,4 +164,64 @@ export class {{{name}}}{{{@root.postfix}}} {
 			{{/if}}
 		});
 	}
+
+	{{#if @root.exportReactQueryHook}}
+	{{#equals method 'GET'}}
+
+	/**
+	 * Hook version using react-query
+	{{#if deprecated}}
+	 * @deprecated
+	{{/if}}
+	{{#if summary}}
+	 * {{{escapeComment summary}}}
+	{{/if}}
+	{{#if description}}
+	 * {{{escapeComment description}}}
+	{{/if}}
+	{{#unless @root.useOptions}}
+	{{#if parameters}}
+	{{#each parameters}}
+	 * @param {{{name}}} {{#if description}}{{{escapeComment description}}}{{/if}}
+	{{/each}}
+	{{/if}}
+	{{/unless}}
+	{{#each results}}
+	 * @returns {{{type}}} {{#if description}}{{{escapeComment description}}}{{/if}}
+	{{/each}}
+	 * @throws ApiError
+	 */
+	{{#if @root.exportClient}}
+	public use{{capitalise name}}({{>parameters}}){
+	{{else}}
+	public static use{{capitalise name}}({{>parameters}}){
+	{{/if}}
+		return useQuery({
+			context: defaultContext,
+			queryKey: [
+				{{>exportReactQueryHookKey}}
+			],
+			queryFn: async () => {
+			return await this.{{{name}}}(
+			{{#each parameters}}
+			{{{name}}},
+			{{/each}}
+			);
+			},
+		});
+	}
+	
+	{{#if @root.exportClient}}
+	public use{{capitalise name}}QueryKey({{>parameters}}):string[]{
+	{{else}}
+	public static use{{capitalise name}}QueryKey({{>parameters}}):string[]{
+	{{/if}}
+		return  [
+			{{>exportReactQueryHookKey}}
+		]
+	}
+
+	{{/equals}}
+	{{/if}}
+	{{/each}}
 }

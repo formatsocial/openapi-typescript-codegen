@@ -18,6 +18,9 @@ import { {{{httpRequest}}} } from '{{{coreLocationSameLevel}}}/{{{httpRequest}}}
 {{#each services}}
 import { {{{name}}}{{{@root.postfix}}} } from './services/{{{name}}}{{{@root.postfix}}}';
 {{/each}}
+{{#each services}}
+import { {{{name}}}Query{{{@root.postfix}}} } from './services/{{{name}}}Query{{{@root.postfix}}}';
+{{/each}}
 {{/if}}
 
 {{#equals @root.httpClient 'angular'}}
@@ -57,6 +60,9 @@ export class {{{clientName}}} {
 	public readonly {{{camelCase name}}}: {{{name}}}{{{@root.postfix}}};
 	{{/each}}
 
+	{{#each services}}
+	public readonly {{{camelCase name}}}Query: {{{name}}}Query{{{@root.postfix}}};
+	{{/each}}
 	public readonly request: BaseHttpRequest;
 
 	constructor(config?: Partial<OpenAPIConfig>, HttpRequest: HttpRequestConstructor = {{{httpRequest}}}) {
@@ -74,6 +80,10 @@ export class {{{clientName}}} {
 
 		{{#each services}}
 		this.{{{camelCase name}}} = new {{{name}}}{{{@root.postfix}}}(this.request);
+		{{/each}}
+
+		{{#each services}}
+		this.{{{camelCase name}}}Query = new {{{name}}}Query{{{@root.postfix}}}(this.request);
 		{{/each}}
 	}
 }
