@@ -21,6 +21,7 @@ describe('writeClientIndex', () => {
                 model: () => 'model',
                 schema: () => 'schema',
                 service: () => 'service',
+                serviceQuery: () => 'serviceQuery',
             },
             core: {
                 settings: () => 'settings',
@@ -46,7 +47,8 @@ describe('writeClientIndex', () => {
             'Service',
             '../core',
             './core',
-            ''
+            '',
+            false
         );
 
         expect(writeFile).toBeCalledWith('/index.ts', 'index');

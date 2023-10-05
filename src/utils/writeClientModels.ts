@@ -27,7 +27,8 @@ export const writeClientModels = async (
     useUnionTypes: boolean,
     indent: Indent,
     coreLocationSameLevel: string,
-    coreLocationUpALevel: string
+    coreLocationUpALevel: string,
+    exportReactQueryHook: boolean
 ): Promise<void> => {
     for (const model of models) {
         const file = resolve(outputPath, `${model.name}.ts`);
@@ -37,6 +38,7 @@ export const writeClientModels = async (
             useUnionTypes,
             coreLocationSameLevel,
             coreLocationUpALevel,
+            exportReactQueryHook,
         });
         await writeFile(file, i(f(templateResult), indent));
     }

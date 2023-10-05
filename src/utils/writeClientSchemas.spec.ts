@@ -38,6 +38,7 @@ describe('writeClientSchemas', () => {
                 model: () => 'model',
                 schema: () => 'schema',
                 service: () => 'service',
+                serviceQuery: () => 'serviceQuery',
             },
             core: {
                 settings: () => 'settings',
@@ -51,7 +52,17 @@ describe('writeClientSchemas', () => {
             },
         };
 
-        await writeClientSchemas(models, templates, '/', HttpClient.FETCH, false, Indent.SPACE_4, '../core', './core');
+        await writeClientSchemas(
+            models,
+            templates,
+            '/',
+            HttpClient.FETCH,
+            false,
+            Indent.SPACE_4,
+            '../core',
+            './core',
+            false
+        );
 
         expect(writeFile).toBeCalledWith('/$User.ts', `schema${EOL}`);
     });

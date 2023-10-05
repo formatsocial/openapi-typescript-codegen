@@ -34,7 +34,8 @@ export const writeClientClass = async (
     indent: Indent,
     postfix: string,
     coreLocationSameLevel: string,
-    coreLocationUpALevel: string
+    coreLocationUpALevel: string,
+    exportReactQueryHook: boolean
 ): Promise<void> => {
     const templateResult = templates.client({
         clientName,
@@ -47,10 +48,9 @@ export const writeClientClass = async (
         httpRequest: getHttpRequestName(httpClient),
         coreLocationSameLevel,
         coreLocationUpALevel,
-        exportReactQueryHook: true,
+        exportReactQueryHook,
         reactQueryKeys: 'pathssss',
         reactQueryHookName: `use--SOOOMMMEEETTTJJHJIOIUJDFData`,
     });
-
     await writeFile(resolve(outputPath, `${clientName}.ts`), i(f(templateResult), indent));
 };

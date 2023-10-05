@@ -52,4 +52,21 @@ export const writeClientServices = async (
         });
         await writeFile(file, i(f(templateResult), indent));
     }
+    if (exportReactQueryHook) {
+        for (const service of services) {
+            const file = resolve(outputPath, `${service.name}Query${postfix}.ts`);
+            const templateResult = templates.exports.serviceQuery({
+                ...service,
+                httpClient,
+                useUnionTypes,
+                useOptions,
+                postfix,
+                exportClient: isDefined(clientName),
+                coreLocationSameLevel,
+                coreLocationUpALevel,
+                exportReactQueryHook,
+            });
+            await writeFile(file, i(f(templateResult), indent));
+        }
+    }
 };

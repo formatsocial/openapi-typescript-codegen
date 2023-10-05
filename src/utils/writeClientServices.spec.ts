@@ -26,6 +26,7 @@ describe('writeClientServices', () => {
                 model: () => 'model',
                 schema: () => 'schema',
                 service: () => 'service',
+                serviceQuery: () => 'serviceQuery',
             },
             core: {
                 settings: () => 'settings',

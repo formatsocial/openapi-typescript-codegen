@@ -46,6 +46,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 	{{#each operations}}
 	
 		this.{{{name}}} = this.{{{name}}}.bind(this)
+
 	{{/each}}
 	}
 	{{else}}
@@ -159,4 +160,5 @@ export class {{{name}}}{{{@root.postfix}}} {
 			{{/if}}
 		});
 	}
+	{{/each}}
 }

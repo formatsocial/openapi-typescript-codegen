@@ -38,6 +38,7 @@ export const writeClientIndex = async (
     postfixModels: string,
     coreLocationSameLevel: string,
     coreLocationUpALevel: string,
+    exportReactQueryHook: boolean,
     clientName?: string
 ): Promise<void> => {
     const templateResult = templates.index({
@@ -56,6 +57,7 @@ export const writeClientIndex = async (
         exportClient: isDefined(clientName),
         coreLocationSameLevel,
         coreLocationUpALevel,
+        exportReactQueryHook,
     });
 
     await writeFile(resolve(outputPath, 'index.ts'), templateResult);

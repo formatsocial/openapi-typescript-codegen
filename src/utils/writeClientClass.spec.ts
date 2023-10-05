@@ -23,6 +23,7 @@ describe('writeClientClass', () => {
                 model: () => 'model',
                 schema: () => 'schema',
                 service: () => 'service',
+                serviceQuery: () => 'serviceQuery',
             },
             core: {
                 settings: () => 'settings',
@@ -45,7 +46,8 @@ describe('writeClientClass', () => {
             Indent.SPACE_4,
             '',
             '../core',
-            './core'
+            './core',
+            false
         );
 
         expect(writeFile).toBeCalled();

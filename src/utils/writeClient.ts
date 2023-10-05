@@ -102,7 +102,8 @@ export const writeClient = async (
             useUnionTypes,
             indent,
             coreLocationSameLevel,
-            coreLocationUpALevel
+            coreLocationUpALevel,
+            exportReactQueryHook
         );
     }
 
@@ -117,7 +118,8 @@ export const writeClient = async (
             useUnionTypes,
             indent,
             coreLocationSameLevel,
-            coreLocationUpALevel
+            coreLocationUpALevel,
+            exportReactQueryHook
         );
     }
 
@@ -132,7 +134,8 @@ export const writeClient = async (
             indent,
             postfixServices,
             coreLocationSameLevel,
-            coreLocationUpALevel
+            coreLocationUpALevel,
+            exportReactQueryHook
         );
     }
 
@@ -151,6 +154,7 @@ export const writeClient = async (
             postfixModels,
             coreLocationSameLevel,
             coreLocationUpALevel,
+            exportReactQueryHook,
             clientName
         );
     }
