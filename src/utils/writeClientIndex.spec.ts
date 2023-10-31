@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 import type { Client } from '../client/interfaces/Client';
 import { writeFile } from './fileSystem';
 import type { Templates } from './registerHandlebarTemplates';
@@ -51,6 +53,6 @@ describe('writeClientIndex', () => {
             false
         );
 
-        expect(writeFile).toBeCalledWith('/index.ts', 'index');
+        expect(writeFile).toBeCalledWith(resolve('/', '/index.ts'), 'index');
     });
 });
