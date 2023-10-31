@@ -140,7 +140,11 @@ export class {{{name}}}{{{@root.postfix}}} {
 			{{/if}}
 			{{#if parametersQuery}}
 			{{#if @root.queryAsObject}}
-			query: queryObj,
+			query: queryObj? {
+				{{#each parametersQuery}}
+				'{{{prop}}}': queryObj.{{{name}}},
+				{{/each}}
+			}: undefined,
 			{{else}}
 			query: {
 				{{#each parametersQuery}}
