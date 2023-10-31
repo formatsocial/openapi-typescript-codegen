@@ -3,25 +3,23 @@
 [![NPM][npm-image]][npm-url]
 [![License][license-image]][license-url]
 [![Coverage][coverage-image]][coverage-url]
-[![Quality][quality-image]][quality-url]
-[![Code Climate][climate-image]][climate-url]
+[![Coverage][coverage-image]][coverage-url]
 [![Downloads][downloads-image]][downloads-url]
 [![Build][build-image]][build-url]
 
 > Node.js library that generates Typescript clients based on the OpenAPI specification.
 
 ## Why?
-
--   Frontend ❤️ OpenAPI, but we do not want to use JAVA codegen in our builds
--   Quick, lightweight, robust and framework-agnostic 🚀
--   Supports generation of TypeScript clients
--   Supports generations of Fetch, [Node-Fetch](#node-fetch-support), [Axios](#axios-support), [Angular](#angular-support) and XHR http clients
--   Supports OpenAPI specification v2.0 and v3.0
--   Supports JSON and YAML files for input
--   Supports generation through CLI, Node.js and NPX
--   Supports tsc and @babel/plugin-transform-typescript
--   Supports aborting of requests (cancelable promise pattern)
--   Supports external references using [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser/)
+- Frontend ❤️ OpenAPI, but we do not want to use JAVA codegen in our builds
+- Quick, lightweight, robust and framework-agnostic 🚀
+- Supports generation of TypeScript clients
+- Supports generations of Fetch, Node-Fetch, Axios, Angular and XHR http clients
+- Supports OpenAPI specification v2.0 and v3.0
+- Supports JSON and YAML files for input
+- Supports generation through CLI, Node.js and NPX
+- Supports tsc and @babel/plugin-transform-typescript
+- Supports aborting of requests (cancelable promise pattern)
+- Supports external references using [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser/)
 
 ## Install
 
@@ -60,7 +58,35 @@ $ openapi --help
     $ openapi --input ./spec.json --output ./generated --client xhr
 ```
 
-# Documentation
+## Docker usage
+
+To build the Docker container, execute the following command:
+
+```
+docker build . --tag openapi-typescript-codegen
+```
+
+After this is done, you can execute the CLI commands:
+
+```
+docker run openapi-typescript-codegen --help
+docker run openapi-typescript-codegen --input sample.yaml --output client
+```
+
+Documentation
+===
+- [Basic usage](docs/basic-usage.md)
+- [OpenAPI object](docs/openapi-object.md)
+- [Client instances](docs/client-instances.md) `--name`
+- [Argument vs. Object style](docs/arguments-vs-object-style.md) `--useOptions`
+- [Enums vs. Union types](docs/enum-vs-union-types.md) `--useUnionTypes`
+- [Runtime schemas](docs/runtime-schemas.md) `--exportSchemas`
+- [Enum with custom names and descriptions](docs/custom-enums.md)
+- [Nullable props (OpenAPI v2)](docs/nullable-props.md)
+- [Authorization](docs/authorization.md)
+- [External references](docs/external-references.md)
+- [Canceling requests](docs/canceling-requests.md)
+- [Custom request file](docs/custom-request-file.md)
 
 -   [Basic usage](docs/basic-usage.md)
 -   [OpenAPI object](docs/openapi-object.md)
@@ -89,10 +115,6 @@ $ openapi --help
 [license-image]: http://img.shields.io/npm/l/openapi-typescript-codegen.svg
 [coverage-url]: https://codecov.io/gh/ferdikoomen/openapi-typescript-codegen
 [coverage-image]: https://img.shields.io/codecov/c/github/ferdikoomen/openapi-typescript-codegen.svg
-[quality-url]: https://lgtm.com/projects/g/ferdikoomen/openapi-typescript-codegen
-[quality-image]: https://img.shields.io/lgtm/grade/javascript/g/ferdikoomen/openapi-typescript-codegen.svg
-[climate-url]: https://codeclimate.com/github/ferdikoomen/openapi-typescript-codegen
-[climate-image]: https://img.shields.io/codeclimate/maintainability/ferdikoomen/openapi-typescript-codegen.svg
 [downloads-url]: http://npm-stat.com/charts.html?package=openapi-typescript-codegen
 [downloads-image]: http://img.shields.io/npm/dm/openapi-typescript-codegen.svg
 [build-url]: https://circleci.com/gh/ferdikoomen/openapi-typescript-codegen/tree/master

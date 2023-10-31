@@ -22,7 +22,6 @@ const params = program
     .option('--exportSchemas <value>', 'Write schemas to disk', false)
     .option('--exportReactQueryHook <value>', 'export react query hooks in addition', false)
     .option('--indent <value>', 'Indentation options [4, 2, tabs]', '4')
-    .option('--postfix <value>', 'Deprecated: Use --postfixServices instead. Service name postfix', 'Service')
     .option('--postfixServices <value>', 'Service name postfix', 'Service')
     .option('--postfixModels <value>', 'Model name postfix')
     .option('--request <value>', 'Path to custom request file')
@@ -45,7 +44,7 @@ if (OpenAPI) {
         exportSchemas: JSON.parse(params.exportSchemas) === true,
         exportReactQueryHook: JSON.parse(params.exportReactQueryHook) === true,
         indent: params.indent,
-        postfixServices: params.postfixServices ?? params.postfix,
+        postfixServices: params.postfixServices,
         postfixModels: params.postfixModels,
         request: params.request,
     })

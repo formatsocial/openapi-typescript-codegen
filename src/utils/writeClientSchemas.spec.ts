@@ -1,4 +1,5 @@
 import { EOL } from 'os';
+import { resolve } from 'path';
 
 import type { Model } from '../client/interfaces/Model';
 import { HttpClient } from '../HttpClient';
@@ -64,6 +65,6 @@ describe('writeClientSchemas', () => {
             false
         );
 
-        expect(writeFile).toBeCalledWith('/$User.ts', `schema${EOL}`);
+        expect(writeFile).toBeCalledWith(resolve('/', '/$User.ts'), `schema${EOL}`);
     });
 });
