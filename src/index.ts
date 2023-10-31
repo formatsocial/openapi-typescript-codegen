@@ -35,6 +35,7 @@ export type Options = {
     request?: string;
     write?: boolean;
     coreLocation?: string;
+    queryAsObject?: boolean;
 };
 
 /**
@@ -77,6 +78,7 @@ export const generate = async ({
     write = true,
     coreLocation = undefined,
     exportReactQueryHook = false,
+    queryAsObject = false,
 }: Options): Promise<void> => {
     const openApi = isString(input) ? await getOpenApiSpec(input) : input;
     const openApiVersion = getOpenApiVersion(openApi);
@@ -147,7 +149,8 @@ export const generate = async ({
                 coreLocationUpALevel,
                 exportReactQueryHook,
                 clientName,
-                request
+                request,
+                queryAsObject
             );
             break;
         }

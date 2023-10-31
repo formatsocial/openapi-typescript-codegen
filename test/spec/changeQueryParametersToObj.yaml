@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+    version: 1.0.0
+    title: thing API
+    description: An API for Everything .
+paths:
+    /thing:
+        get:
+            operationId: GetAllThings
+            parameters:
+                - $ref: '#/components/parameters/orderByQuery'
+                - $ref: '#/components/parameters/orderByOrderQuery'
+            responses:
+                '200':
+                    description: Get All Things
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: string
+components:
+    parameters:
+        orderByQuery:
+            name: orderBy
+            in: query
+            schema:
+                type: string
+                enum:
+                    - name
+                    - createdAt
+                    - updatedAt
+        orderByOrderQuery:
+            name: orderByOrder
+            in: query
+            schema:
+                type: string
+                enum:
+                    - asc
+                    - desc

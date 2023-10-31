@@ -20,9 +20,23 @@
 {{/each}}
 }
 {{~else}}
-
+{{#if @root.queryAsObject}}
+{{#each parameters}}
+{{#notEquals in 'query'}}
+{{{name}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}},
+{{/notEquals}}
+{{/each}}
+{{#if parametersQuery}}
+queryObj{{#parametersQueryIsNotRequired parametersQuery}}?{{/parametersQueryIsNotRequired}}:{
+{{#each parametersQuery}}
+{{{name}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}},
+{{/each}}
+},
+{{/if}}
+{{else}}
 {{#each parameters}}
 {{{name}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}},
 {{/each}}
+{{/if}}
 {{/if}}
 {{/if}}

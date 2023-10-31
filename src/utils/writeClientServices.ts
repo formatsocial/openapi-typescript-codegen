@@ -35,7 +35,8 @@ export const writeClientServices = async (
     coreLocationSameLevel: string,
     coreLocationUpALevel: string,
     exportReactQueryHook: boolean,
-    clientName?: string
+    clientName?: string,
+    queryAsObject?: boolean
 ): Promise<void> => {
     for (const service of services) {
         const file = resolve(outputPath, `${service.name}${postfix}.ts`);
@@ -49,6 +50,7 @@ export const writeClientServices = async (
             coreLocationSameLevel,
             coreLocationUpALevel,
             exportReactQueryHook,
+            queryAsObject,
         });
         await writeFile(file, i(f(templateResult), indent));
     }
@@ -65,6 +67,7 @@ export const writeClientServices = async (
                 coreLocationSameLevel,
                 coreLocationUpALevel,
                 exportReactQueryHook,
+                queryAsObject,
             });
             await writeFile(file, i(f(templateResult), indent));
         }

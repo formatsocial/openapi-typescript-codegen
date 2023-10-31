@@ -6,6 +6,7 @@ import type { Enum } from '../client/interfaces/Enum';
 import type { Model } from '../client/interfaces/Model';
 import type { HttpClient } from '../HttpClient';
 import { unique } from './unique';
+import { OperationParameter } from '../client/interfaces/OperationParameter';
 
 export const registerHandlebarHelpers = (root: {
     httpClient: HttpClient;
@@ -108,4 +109,11 @@ export const registerHandlebarHelpers = (root: {
     Handlebars.registerHelper('capitalise', function (value: string): string {
         return value.charAt(0).toUpperCase() + value.substring(1);
     });
+
+    Handlebars.registerHelper(
+        'parametersQueryIsNotRequired',
+        function (this: any, params: OperationParameter[], options: Handlebars.HelperOptions): string {
+            return params.every(p => !p.isRequired) ? options.fn(this) : options.inverse(this);
+        }
+    );
 };

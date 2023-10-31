@@ -54,7 +54,8 @@ export const writeClient = async (
     coreLocationUpALevel: string,
     exportReactQueryHook: boolean,
     clientName?: string,
-    request?: string
+    request?: string,
+    queryAsObject?: boolean
 ): Promise<void> => {
     const outputPath = resolve(process.cwd(), output);
     const outputPathCore = resolve(outputPath, 'core');
@@ -87,7 +88,8 @@ export const writeClient = async (
             coreLocationSameLevel,
             coreLocationUpALevel,
             exportReactQueryHook,
-            clientName
+            clientName,
+            queryAsObject
         );
     }
 

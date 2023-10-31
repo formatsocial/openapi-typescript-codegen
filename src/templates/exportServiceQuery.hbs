@@ -77,9 +77,24 @@ export class {{{name}}}Query{{{@root.postfix}}} {
 	{{/if}}
 	{{#unless @root.useOptions}}
 	{{#if parameters}}
+	{{#if @root.queryAsObject}}
+	{{#each parameters}}
+	{{#notEquals in 'query'}}
+	 * @param {{{name}}} {{#if description}}{{{escapeComment description}}}{{/if}}
+	{{/notEquals}}
+	{{/each}}
+	{{#if parametersQuery}}
+	 * queryObj = {
+	{{#each parametersQuery}}
+	 *	 @param {{{name}}} {{#if description}}{{{escapeComment description}}}{{/if}}
+	{{/each}}
+	 * }
+	{{/if}}
+	{{else}}
 	{{#each parameters}}
 	 * @param {{{name}}} {{#if description}}{{{escapeComment description}}}{{/if}}
 	{{/each}}
+	{{/if}}
 	{{/if}}
 	{{/unless}}
 	{{#each results}}
@@ -128,11 +143,15 @@ export class {{{name}}}Query{{{@root.postfix}}} {
 			},
 			{{/if}}
 			{{#if parametersQuery}}
+			{{#if @root.queryAsObject}}
+			query: queryObj,
+			{{else}}
 			query: {
 				{{#each parametersQuery}}
 				'{{{prop}}}': {{{name}}},
 				{{/each}}
 			},
+			{{/if}}
 			{{/if}}
 			{{#if parametersForm}}
 			formData: {
