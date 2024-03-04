@@ -48,6 +48,15 @@ export const getModel = (
         properties: [],
     };
 
+    if (definition.const !== undefined) {
+        model.export = 'const';
+        const definitionConst = definition.const;
+        const modelConst = typeof definitionConst === 'string' ? `"${definitionConst}"` : `${definitionConst}`;
+        model.type = modelConst;
+        model.base = modelConst;
+        return model;
+    }
+
     if (definition.$ref) {
         const definitionRef = getType(definition.$ref);
         model.export = 'reference';
@@ -189,15 +198,6 @@ export const getModel = (
         model.isNullable = definitionType.isNullable || model.isNullable;
         model.imports.push(...definitionType.imports);
         model.default = getModelDefault(definition, model);
-        return model;
-    }
-
-    if (definition.const !== undefined) {
-        model.export = 'const';
-        const definitionConst = definition.const;
-        const modelConst = typeof definitionConst === 'string' ? `"${definitionConst}"` : `${definitionConst}`;
-        model.type = modelConst;
-        model.base = modelConst;
         return model;
     }
 
