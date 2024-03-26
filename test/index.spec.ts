@@ -84,10 +84,32 @@ describe('changeQueryParametersToObj', () => {
             coreLocation: './test/generated/bin/core',
             queryAsObject: true,
         });
-        expect(true).toBe(false);
-        // sync('./test/generated/changeQueryParametersToObj/**/*.ts').forEach(file => {
-        //     const content = readFileSync(file, 'utf8').toString();
-        //     expect(content).toMatchSnapshot(file);
-        // });
+        sync('./test/generated/changeQueryParametersToObj/**/*.ts').forEach(file => {
+            const content = readFileSync(file, 'utf8').toString();
+            expect(content).toMatchSnapshot(file);
+        });
+    });
+});
+
+describe('constEnumValue', () => {
+    it('should generate', async () => {
+        await generate({
+            input: './test/spec/constEnumValue.yaml',
+            output: './test/generated/constEnumValue/',
+            httpClient: HttpClient.FETCH,
+            useOptions: false,
+            useUnionTypes: false,
+            exportCore: true,
+            exportSchemas: true,
+            exportModels: true,
+            exportServices: true,
+            postfixModels: 'Dto',
+            coreLocation: './test/generated/bin/core',
+            queryAsObject: true,
+        });
+        sync('./test/generated/constEnumValue/**/*.ts').forEach(file => {
+            const content = readFileSync(file, 'utf8').toString();
+            expect(content).toMatchSnapshot(file);
+        });
     });
 });

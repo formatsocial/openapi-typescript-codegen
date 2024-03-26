@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+    version: 1.0.0
+    title: thing API
+    description: An API for Everything .
+paths:
+    /thing:
+        get:
+            operationId: GetAllThings
+            responses:
+                '200':
+                    description: Get All Things
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/responseObj'
+components:
+    schemas:
+        responseObj:
+            type: object
+            required:
+                - control
+                - data
+            properties:
+                control:
+                    type: string
+                    enum:
+                        - thing1
+                    x-enum-const-value:
+                        value: thing1
+                        type:
+                            $ref: '#/components/schemas/thingsEnum'
+                data:
+                    $ref: '#/components/schemas/thingObj'
+        thingObj:
+            type: object
+            required:
+                - name
+                - createdAt
+                - updatedAt
+            properties:
+                name:
+                    type: string
+                createdAt:
+                    type: string
+                updatedAt:
+                    type: string
+
+        thingsEnum:
+            type: string
+            enum:
+                - thing1
+                - alsoThing2
+                - megaThing3

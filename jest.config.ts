@@ -12,6 +12,15 @@ const config: Config.InitialOptions = {
             },
         },
         {
+            displayName: 'SNAPSHOT',
+            testEnvironment: 'node',
+            testMatch: ['<rootDir>/test/index.spec.ts'],
+            moduleFileExtensions: ['js', 'ts', 'd.ts'],
+            moduleNameMapper: {
+                '\\.hbs$': '<rootDir>/src/templates/__mocks__/index.ts',
+            },
+        },
+        {
             displayName: 'E2E',
             testEnvironment: 'node',
             testMatch: [

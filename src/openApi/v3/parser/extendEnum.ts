@@ -1,6 +1,10 @@
 import type { Enum } from '../../../client/interfaces/Enum';
 import { isString } from '../../../utils/isString';
-import type { WithEnumExtension } from '../interfaces/Extensions/WithEnumExtension';
+import type {
+    WithEnumExtension,
+    WithEnumConstValueExtension,
+    EnumConstValueExtensionValue,
+} from '../interfaces/Extensions/WithEnumExtension';
 
 /**
  * Extend the enum with the x-enum properties. This adds the capability
@@ -18,4 +22,14 @@ export const extendEnum = (enumerators: Enum[], definition: WithEnumExtension): 
         value: enumerator.value,
         type: enumerator.type,
     }));
+};
+
+/**
+ * Extend the enum with the   x-enum-const-value. This adds the capability to define an enum's
+ * value as part of the definition of the type
+ */
+export const extendEnumConstValue = (
+    definition: WithEnumConstValueExtension
+): EnumConstValueExtensionValue | undefined => {
+    return definition['x-enum-const-value'];
 };

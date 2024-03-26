@@ -2,7 +2,7 @@ import type { Model } from '../../../client/interfaces/Model';
 import { getPattern } from '../../../utils/getPattern';
 import type { OpenApi } from '../interfaces/OpenApi';
 import type { OpenApiSchema } from '../interfaces/OpenApiSchema';
-import { extendEnum } from './extendEnum';
+import { extendEnum, extendEnumConstValue } from './extendEnum';
 import { getEnum } from './getEnum';
 import { getModelComposition } from './getModelComposition';
 import { getModelDefault } from './getModelDefault';
@@ -47,6 +47,18 @@ export const getModel = (
         enums: [],
         properties: [],
     };
+
+    const enumConstValue = extendEnumConstValue(definition);
+    if (enumConstValue) {
+        const definitionRef = getType(enumConstValue.type.$ref);
+        const enumVal = getEnum([enumConstValue.value]);
+        model.export = 'const';
+        const modelConst = `${definitionRef.type}.${enumVal[0].name}`;
+        model.type = modelConst;
+        model.base = modelConst;
+        model.imports.push(...definitionRef.imports);
+        return model;
+    }
 
     if (definition.const !== undefined) {
         model.export = 'const';
