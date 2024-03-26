@@ -2,24 +2,23 @@
 
 [![NPM][npm-image]][npm-url]
 [![License][license-image]][license-url]
-[![Coverage][coverage-image]][coverage-url]
-[![Coverage][coverage-image]][coverage-url]
 [![Downloads][downloads-image]][downloads-url]
 [![Build][build-image]][build-url]
 
 > Node.js library that generates Typescript clients based on the OpenAPI specification.
 
 ## Why?
-- Frontend ❤️ OpenAPI, but we do not want to use JAVA codegen in our builds
-- Quick, lightweight, robust and framework-agnostic 🚀
-- Supports generation of TypeScript clients
-- Supports generations of Fetch, Node-Fetch, Axios, Angular and XHR http clients
-- Supports OpenAPI specification v2.0 and v3.0
-- Supports JSON and YAML files for input
-- Supports generation through CLI, Node.js and NPX
-- Supports tsc and @babel/plugin-transform-typescript
-- Supports aborting of requests (cancelable promise pattern)
-- Supports external references using [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser/)
+
+-   Frontend ❤️ OpenAPI, but we do not want to use JAVA codegen in our builds
+-   Quick, lightweight, robust and framework-agnostic 🚀
+-   Supports generation of TypeScript clients
+-   Supports generations of Fetch, Node-Fetch, Axios, Angular and XHR http clients
+-   Supports OpenAPI specification v2.0 and v3.0
+-   Supports JSON and YAML files for input
+-   Supports generation through CLI, Node.js and NPX
+-   Supports tsc and @babel/plugin-transform-typescript
+-   Supports aborting of requests (cancelable promise pattern)
+-   Supports external references using [json-schema-ref-parser](https://github.com/APIDevTools/json-schema-ref-parser/)
 
 ## Install
 
@@ -58,56 +57,19 @@ $ openapi --help
     $ openapi --input ./spec.json --output ./generated --client xhr
 ```
 
-## Docker usage
+# Documentation
 
-To build the Docker container, execute the following command:
+The main documentation can be found in the [openapi-typescript-codegen/wiki](https://github.com/ferdikoomen/openapi-typescript-codegen/wiki)
 
-```
-docker build . --tag openapi-typescript-codegen
-```
+# Sponsors
 
-After this is done, you can execute the CLI commands:
+If you or your company use the OpenAPI Typescript Codegen, please consider supporting me. By sponsoring I can free up time to give this project some love! Details can be found here: https://github.com/sponsors/ferdikoomen
 
-```
-docker run openapi-typescript-codegen --help
-docker run openapi-typescript-codegen --input sample.yaml --output client
-```
+If you're from an enterprise looking for a fully managed SDK generation, please consider our sponsor:
 
-Documentation
-===
-- [Basic usage](docs/basic-usage.md)
-- [OpenAPI object](docs/openapi-object.md)
-- [Client instances](docs/client-instances.md) `--name`
-- [Argument vs. Object style](docs/arguments-vs-object-style.md) `--useOptions`
-- [Enums vs. Union types](docs/enum-vs-union-types.md) `--useUnionTypes`
-- [Runtime schemas](docs/runtime-schemas.md) `--exportSchemas`
-- [Enum with custom names and descriptions](docs/custom-enums.md)
-- [Nullable props (OpenAPI v2)](docs/nullable-props.md)
-- [Authorization](docs/authorization.md)
-- [External references](docs/external-references.md)
-- [Canceling requests](docs/canceling-requests.md)
-- [Custom request file](docs/custom-request-file.md)
-
--   [Basic usage](docs/basic-usage.md)
--   [OpenAPI object](docs/openapi-object.md)
--   [Client instances](docs/client-instances.md) `--name`
--   [Argument vs. Object style](docs/arguments-vs-object-style.md) `--useOptions`
--   [Enums vs. Union types](docs/enum-vs-union-types.md) `--useUnionTypes`
--   [Runtime schemas](docs/runtime-schemas.md) `--exportSchemas`
--   [Enum with custom names and descriptions](docs/custom-enums.md)
--   [Nullable props (OpenAPI v2)](docs/nullable-props.md)
--   [Authorization](docs/authorization.md)
--   [External references](docs/external-references.md)
--   [Canceling requests](docs/canceling-requests.md)
--   [Custom request file](docs/custom-request-file.md)
--   [Custom Core Location](docs/custom-core-location.md)
-
-# Support
-
--   [Babel support](docs/babel-support.md)
--   [Axios support](docs/axios-support.md)
--   [Angular support](docs/angular-support.md)
--   [Node-Fetch support](docs/node-fetch-support.md)
+<a href="https://speakeasyapi.dev/?utm_source=ferdi+repo&utm_medium=github+sponsorship">
+    <img alt="speakeasy" src="https://storage.googleapis.com/speakeasy-design-assets/ferdi-sponsorship.png" width="640"/>
+</a>
 
 [npm-url]: https://npmjs.org/package/openapi-typescript-codegen
 [npm-image]: https://img.shields.io/npm/v/openapi-typescript-codegen.svg
