@@ -66,3 +66,15 @@ components:
             properties:
                 subProperty1:
                     type: string
+                    enum:
+                        - controlTextEnumVal3
+                    x-enum-const-value:
+                        value: controlTextEnumVal3
+                        type:
+                            $ref: '#/components/schemas/MasterFieldsControlType'
+        MasterFieldsControlType:
+            type: string
+            enum:
+                - controlTextEnumVal1
+                - controlTextEnumVal2
+                - controlTextEnumVal3

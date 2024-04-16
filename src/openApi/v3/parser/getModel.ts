@@ -178,9 +178,9 @@ export const getModel = (
             definition.allOf.forEach((def, index) => {
                 if (def.$ref) {
                     const ref = getRef<OpenApiSchema>(openApi, def);
-                    // const refModel = getModel(openApi, ref);
-                    const refProperties = getModelProperties(openApi, ref, getModel, model);
-                    refProperties.forEach(modelProperty => {
+                    const refModel = getModel(openApi, ref);
+                    // const refProperties = getModelProperties(openApi, refModel, getModel, model);
+                    refModel.properties.forEach(modelProperty => {
                         model.imports.push(...modelProperty.imports);
                         model.enums.push(...modelProperty.enums);
                         model.properties.push(modelProperty);
