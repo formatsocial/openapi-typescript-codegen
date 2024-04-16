@@ -58,7 +58,7 @@ describe('v3WithCustomCoreLocation', () => {
             exportModels: true,
             exportServices: true,
             postfixModels: 'Dto',
-            coreLocation: './test/generated/bin/core',
+            coreLocation: './test/generated/v3/core',
         });
 
         sync('./test/generated/v3WithCustomCoreLocation/**/*.ts').forEach(file => {
@@ -81,7 +81,7 @@ describe('changeQueryParametersToObj', () => {
             exportModels: true,
             exportServices: true,
             postfixModels: 'Dto',
-            coreLocation: './test/generated/bin/core',
+            coreLocation: './test/generated/v3/core',
             queryAsObject: true,
         });
         sync('./test/generated/changeQueryParametersToObj/**/*.ts').forEach(file => {
@@ -104,10 +104,33 @@ describe('constEnumValue', () => {
             exportModels: true,
             exportServices: true,
             postfixModels: 'Dto',
-            coreLocation: './test/generated/bin/core',
+            coreLocation: './test/generated/v3/core',
             queryAsObject: true,
         });
         sync('./test/generated/constEnumValue/**/*.ts').forEach(file => {
+            const content = readFileSync(file, 'utf8').toString();
+            expect(content).toMatchSnapshot(file);
+        });
+    });
+});
+
+describe('allOfCombined', () => {
+    it('should generate', async () => {
+        await generate({
+            input: './test/spec/allOfCombined.yaml',
+            output: './test/generated/allOfCombined/',
+            httpClient: HttpClient.FETCH,
+            useOptions: false,
+            useUnionTypes: false,
+            exportCore: true,
+            exportSchemas: true,
+            exportModels: true,
+            exportServices: true,
+            postfixModels: 'Dto',
+            coreLocation: './test/generated/v3/core',
+            queryAsObject: true,
+        });
+        sync('./test/generated/allOfCombined/**/*.ts').forEach(file => {
             const content = readFileSync(file, 'utf8').toString();
             expect(content).toMatchSnapshot(file);
         });

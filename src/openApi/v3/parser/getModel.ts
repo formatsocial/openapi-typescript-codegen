@@ -7,6 +7,7 @@ import { getEnum } from './getEnum';
 import { getModelComposition } from './getModelComposition';
 import { getModelDefault } from './getModelDefault';
 import { getModelProperties } from './getModelProperties';
+import { getRef } from './getRef';
 import { getType } from './getType';
 
 export const getModel = (
@@ -162,11 +163,41 @@ export const getModel = (
     }
 
     if (definition.allOf?.length) {
-        const composition = getModelComposition(openApi, definition, definition.allOf, 'all-of', getModel);
-        model.export = composition.type;
-        model.imports.push(...composition.imports);
-        model.properties.push(...composition.properties);
-        model.enums.push(...composition.enums);
+        // const composition = getModelComposition(openApi, definition, definition.allOf, 'all-of', getModel);
+        // model.export = composition.type;
+        // model.imports.push(...composition.imports);
+        // model.properties.push(...composition.properties);
+        // model.enums.push(...composition.enums);
+        model.export = 'interface';
+        model.type = 'any';
+        model.base = 'any';
+        model.default = getModelDefault(definition, model);
+
+        definition.allOf.forEach((def, index) => {
+            if (def.$ref) {
+                const ref = getRef<OpenApiSchema>(openApi, def);
+                // const refModel = getModel(openApi, ref);
+                const refProperties = getModelProperties(openApi, ref, getModel, model);
+                refProperties.forEach(modelProperty => {
+                    model.imports.push(...modelProperty.imports);
+                    model.enums.push(...modelProperty.enums);
+                    model.properties.push(modelProperty);
+                    if (modelProperty.export === 'enum') {
+                        model.enums.push(modelProperty);
+                    }
+                });
+            } else {
+                const refProperties = getModelProperties(openApi, def, getModel, model);
+                refProperties.forEach(modelProperty => {
+                    model.imports.push(...modelProperty.imports);
+                    model.enums.push(...modelProperty.enums);
+                    model.properties.push(modelProperty);
+                    if (modelProperty.export === 'enum') {
+                        model.enums.push(modelProperty);
+                    }
+                });
+            }
+        });
         return model;
     }
 

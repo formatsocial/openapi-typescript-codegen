@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+    version: 1.0.0
+    title: thing API
+    description: An API for Everything .
+paths:
+    /thing:
+        get:
+            parameters:
+                - $ref: '#/components/parameters/paramQuery1'
+                - $ref: '#/components/parameters/paramQuery2'
+            operationId: GetAllThings
+            responses:
+                '200':
+                    description: Get All Things
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/responseObj'
+components:
+    parameters:
+        paramQuery1:
+            name: paramQuery1
+            in: query
+            schema:
+                $ref: '#/components/schemas/paramTypeEnum1'
+        paramQuery2:
+            name: paramQuery2
+            in: query
+            schema:
+                type: string
+    schemas:
+        paramTypeEnum1:
+            type: string
+            enum:
+                - type1
+                - type2
+                - type3
+        responseObj:
+            type: object
+            allOf:
+                - $ref: '#/components/schemas/responseObj1'
+                - $ref: '#/components/schemas/responseObj2'
+        responseObj1:
+            type: object
+            required:
+                - property1
+            properties:
+                property1:
+                    type: string
+
+        responseObj2:
+            type: object
+            required:
+                - property2
+            properties:
+                property2:
+                    type: string

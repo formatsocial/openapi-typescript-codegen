@@ -4,6 +4,7 @@ import { getModels } from './parser/getModels';
 import { getServer } from './parser/getServer';
 import { getServices } from './parser/getServices';
 import { getServiceVersion } from './parser/getServiceVersion';
+import { pruneModels } from './parser/pruneModels';
 
 /**
  * Parse the OpenAPI specification to a Client model that contains
@@ -16,5 +17,6 @@ export const parse = (openApi: OpenApi): Client => {
     const models = getModels(openApi);
     const services = getServices(openApi);
 
-    return { version, server, models, services };
+    const prunedModels = pruneModels(models, services);
+    return { version, server, models: prunedModels, services };
 };
