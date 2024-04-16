@@ -56,3 +56,13 @@ components:
             properties:
                 property2:
                     type: string
+                property3:
+                    $ref: '#/components/schemas/responseObj3'
+
+        responseObj3:
+            type: object
+            required:
+                - subProperty1
+            properties:
+                subProperty1:
+                    type: string

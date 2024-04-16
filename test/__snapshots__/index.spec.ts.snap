@@ -8,9 +8,11 @@ exports[`allOfCombined should generate: test/generated/allOfCombined/index.ts 1`
 
 export { paramTypeEnum1 as paramTypeEnum1Dto } from './models/paramTypeEnum1';
 export type { responseObj as responseObjDto } from './models/responseObj';
+export type { responseObj3 as responseObj3Dto } from './models/responseObj3';
 
 export { $paramTypeEnum1 } from './schemas/$paramTypeEnum1';
 export { $responseObj } from './schemas/$responseObj';
+export { $responseObj3 } from './schemas/$responseObj3';
 
 export { DefaultService } from './services/DefaultService';
 "
@@ -34,9 +36,23 @@ exports[`allOfCombined should generate: test/generated/allOfCombined/models/resp
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { responseObj3 } from './responseObj3';
 export type responseObj = {
     property1: string;
     property2: string;
+    property3?: responseObj3;
+};
+
+"
+`;
+
+exports[`allOfCombined should generate: test/generated/allOfCombined/models/responseObj3.ts 1`] = `
+"/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export type responseObj3 = {
+    subProperty1: string;
 };
 
 "
@@ -65,6 +81,25 @@ export const $responseObj = {
             isRequired: true,
         },
         property2: {
+            type: 'string',
+            isRequired: true,
+        },
+        property3: {
+            type: 'responseObj3',
+        },
+    },
+} as const;
+"
+`;
+
+exports[`allOfCombined should generate: test/generated/allOfCombined/schemas/$responseObj3.ts 1`] = `
+"/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export const $responseObj3 = {
+    properties: {
+        subProperty1: {
             type: 'string',
             isRequired: true,
         },
@@ -162,8 +197,12 @@ exports[`constEnumValue should generate: test/generated/constEnumValue/index.ts 
 /* eslint-disable */
 
 export type { responseObj as responseObjDto } from './models/responseObj';
+export type { thingObj as thingObjDto } from './models/thingObj';
+export { thingsEnum as thingsEnumDto } from './models/thingsEnum';
 
 export { $responseObj } from './schemas/$responseObj';
+export { $thingObj } from './schemas/$thingObj';
+export { $thingsEnum } from './schemas/$thingsEnum';
 
 export { DefaultService } from './services/DefaultService';
 "
@@ -184,6 +223,33 @@ export type responseObj = {
 "
 `;
 
+exports[`constEnumValue should generate: test/generated/constEnumValue/models/thingObj.ts 1`] = `
+"/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export type thingObj = {
+    name: string;
+    createdAt: string;
+    updatedAt: string;
+};
+
+"
+`;
+
+exports[`constEnumValue should generate: test/generated/constEnumValue/models/thingsEnum.ts 1`] = `
+"/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export enum thingsEnum {
+    THING1 = 'thing1',
+    ALSO_THING2 = 'alsoThing2',
+    MEGA_THING3 = 'megaThing3',
+}
+"
+`;
+
 exports[`constEnumValue should generate: test/generated/constEnumValue/schemas/$responseObj.ts 1`] = `
 "/* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
@@ -200,6 +266,41 @@ export const $responseObj = {
             isRequired: true,
         },
     },
+} as const;
+"
+`;
+
+exports[`constEnumValue should generate: test/generated/constEnumValue/schemas/$thingObj.ts 1`] = `
+"/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export const $thingObj = {
+    properties: {
+        name: {
+            type: 'string',
+            isRequired: true,
+        },
+        createdAt: {
+            type: 'string',
+            isRequired: true,
+        },
+        updatedAt: {
+            type: 'string',
+            isRequired: true,
+        },
+    },
+} as const;
+"
+`;
+
+exports[`constEnumValue should generate: test/generated/constEnumValue/schemas/$thingsEnum.ts 1`] = `
+"/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export const $thingsEnum = {
+    type: 'Enum',
 } as const;
 "
 `;

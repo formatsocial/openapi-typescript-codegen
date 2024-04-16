@@ -14,6 +14,15 @@ export const pruneModels = (models: Model[], services: Service[]) => {
                     break;
                 }
             }
+            for (const mod2 of models) {
+                if (mod2.name === mod.name) {
+                    continue;
+                }
+                if (mod2.imports.includes(mod.name)) {
+                    useful = true;
+                    break;
+                }
+            }
             if (!useful) {
                 removeModNames.push(mod.name);
             }
