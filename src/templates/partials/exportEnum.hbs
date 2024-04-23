@@ -15,10 +15,14 @@ export enum {{{name}}} {
 	 * {{{escapeComment description}}}
 	 */
 	{{/if}}
+	{{#if name}}
 	{{#containsSpaces name}}
 	'{{{name}}}' = {{{value}}},
 	{{else}}
 	{{{name}}} = {{{value}}},
 	{{/containsSpaces}}
+	{{else}}
+	EMPTY = {{{value}}},
+	{{/if}}
 	{{/each}}
 }
